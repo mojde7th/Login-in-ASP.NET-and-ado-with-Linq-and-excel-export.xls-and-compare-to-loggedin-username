@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<h2>شما وارد شدید</h2>
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+
+<div class="jumbotron">
+    <h1>نمایش جدول اطلاعات حقوق </h1>
+  
+    <input type="button" class="btn btn-primary btn-lg" value="نمایش جدول" onclick="location.href='@Url.Action("but", "Account")'" />
+</div>
+<script>function but() {
+        $.get("/Home/but", function (data) {
+            $("p").html(data);
+        });
+    }</script>
+
+

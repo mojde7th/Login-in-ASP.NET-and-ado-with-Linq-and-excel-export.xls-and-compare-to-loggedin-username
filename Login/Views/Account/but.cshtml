@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Login.Employee>
+@{ ViewBag.Title = "but";
+    Layout = "~/Views/_LayoutPage2.cshtml"; }
+
+<h2>دانلود اطلاعات</h2>
+<body>
+
+</body>
+<hr />
+@{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+@wbgrid.GetHtml(
+    tableStyle: "table", 
+    htmlAttributes: new { @id = "wbgrid"},
+    columns: wbgrid.Columns(wbgrid.Column("Reg", "Reg"),
+   wbgrid.Column("CompanyCodee", "CompanyCode")
+   ))
+
+
+<a href="@Url.Action("ExporttoExcel","Account")">دانلود اکسل حقوق</a>
